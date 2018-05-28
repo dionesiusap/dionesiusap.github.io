@@ -9,7 +9,7 @@ body{
 	margin: 0;
 	border: 0;
 	background-color: rgba(0,0,0,1);
-	background-image: url("./img/background1.jpg");
+	background-image: url("../img/background1.jpg");
 	background-size: 100%;
 	background-position: right top;
 	background-repeat: no-repeat;
@@ -115,19 +115,19 @@ h4{
 }
 
 .flag-icon-id{
-	background-image: url(./img/id.svg);
+	background-image: url(../img/id.svg);
 }
 
 .flag-icon-gb{
-	background-image: url(./img/gb.svg);
+	background-image: url(../img/gb.svg);
 }
 
 .flag-icon-it{
-	background-image: url(./img/it.svg);
+	background-image: url(../img/it.svg);
 }
 
 .flag-icon-spqr{
-	background-image: url(./img/spqr.jpg);
+	background-image: url(../img/spqr.jpg);
 }
 
 ol{
@@ -195,24 +195,24 @@ a.sb.min,
 
 a.sb.twitter,
 .sb a.twitter{
-	background-image: url(./img/twitter_bird.png);
+	background-image: url(../img/twitter_bird.png);
 }
 
 a.sb.facebook,
 .sb a.facebook{
-	background-image: url(./img/facebook.png);
+	background-image: url(../img/facebook.png);
 }
 
 a.sb.email{
-	background-image: url(./img/email.png);
+	background-image: url(../img/email.png);
 }
 
 a.sb.instagram{
-	background-image: url(./img/instagram.png);
+	background-image: url(../img/instagram.png);
 }
 
 a.sb.github{
-	background-image: url(./img/github.png);
+	background-image: url(../img/github.png);
 }
 
 @media screen and (max-device-width: 730px) {
