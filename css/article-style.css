@@ -1,0 +1,242 @@
+/*
+index.css
+(c) 2017 by Dionesius Agung AP
+For ARC Project 1
+March 2017
+*/
+
+body{
+	margin: 0;
+	border: 0;
+	background-color: rgba(0,0,0,1);
+	background-image: url("../img/computer-vision.jpg");
+	background-size: 100%;
+	background-position: right top;
+	background-repeat: no-repeat;
+    color: white;
+}
+
+ /* Style the header: fixed position (always stay at the top) */
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: rgb(50, 50, 50);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+.header-title {
+    font-size: 2em;
+    padding: 10px;
+    float: left;
+    color: #f2f2f2;
+}
+
+.header-text {
+    overflow: auto;
+}
+
+/* Style the links inside the navigation bar */
+.header a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.header a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.header a.active {
+    background-color: rgba(51, 102, 255, 1);
+    color: white;
+}
+
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: rgba(51, 102, 255, 1);
+  width: 0%;
+} 
+
+a{
+	color: white;
+	text-decoration: none;
+}
+
+a:hover{
+	/* color: rgba(255, 255, 0, 1); */
+    color: rgba(51, 102, 255, 1);
+}
+
+.article-title{
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+}
+
+.isitab{
+    padding-left: 1%;
+    font-family: 'Helvetica', sans-serif;
+}
+
+#quote{
+	background-color: rgba(0,0,0,0.6);
+	padding: 20px;
+	max-width: 500px;
+	margin: 50vh 20px 20px 20px;
+	color: white;
+	text-align: justify;
+}
+
+h1{
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+#isiquote{
+	font-family: 'Roboto', sans-serif;
+}
+
+h2{
+	margin: 0px;
+}
+
+h4{
+	margin: 0px;
+}
+
+.info{
+	background-color: rgba(0,0,0,0.6);
+	color: white;
+	padding: 50px 165px;
+}
+
+ol{
+	list-style: none;
+	counter-reset: li;
+}
+
+li{
+	counter-increment: li;
+}
+
+li::before{
+	content: counter(li);
+    /* color: rgba(255,255,0,1); */
+    color: rgba(51, 102, 255, 1);
+	display: inline-block;
+	width: 1em;
+	margin: 3px 0 3px -1em;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.footer{
+	text-align: center;
+    /* background-color: rgba(255,255,0,1); */
+    background-color: rgba(51, 102, 255, 1);
+	padding-bottom: 0.5em;
+	padding-top:0.75em;
+	color: black;
+	width: 100%;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+figcaption {
+    text-align: center;
+    font-size: .8em;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/*Social button credits: thanks to Nick La "http://webdesignerwall.com/tutorials/css-social-buttons"*/
+a.sb,
+.sb a{
+	width: 32px;
+	height: 32px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	text-indent: -900em;
+	color: #333;
+	text-decoration: none;
+	line-height: 100%;
+	white-space: nowrap;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	margin: 0;
+}
+
+.sb{
+	margin: 0;
+	padding: 0;
+}
+
+.sb li{
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+a.sb.min,
+.sb.min a{
+	background-color: transparent;
+	border: none;
+}
+
+a.sb.twitter,
+.sb a.twitter{
+	background-image: url(../img/twitter_bird.png);
+}
+
+a.sb.facebook,
+.sb a.facebook{
+	background-image: url(../img/facebook.png);
+}
+
+a.sb.email{
+	background-image: url(../img/email.png);
+}
+
+a.sb.instagram{
+	background-image: url(../img/instagram.png);
+}
+
+a.sb.github{
+	background-image: url(../img/github.png);
+}
+
+@media screen and (max-device-width: 730px) {
+	.menu {
+		width: 100%;
+	}
+	
+	#quote{
+		width:100%;
+	}
+	
+	.footer{
+		width: 100%;
+		position:absolute;
+	}
+}

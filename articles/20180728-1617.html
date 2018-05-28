@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Profile, CV, and portofolio webpage of Dionesius Agung">
+    <meta name="keywords" content="profile,page,cv,portofolio">
+    <meta name="author" content="Dionesius Agung AP">
+    <link href="../css/article-style.css" rel="stylesheet"></link>
+    <title>Article</title>
+    <link rel="icon" href="../img/favicon.png" type="image" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-text">
+            <div class="header-title">dionesius<span style="color:rgba(51, 102, 255, 1)">ap</span>.articles</div>
+            <a href="../index.html">Home</a>
+            <a class="active" href="#image-processing">Image Processing</a>
+            <a href="#robotics">Robotics</a>
+            <a href="#others">Various Topics</a>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+    </div>
+
+    <div id="quote">
+        <div id="isiquote">
+            <h2>"Computer vision and machine learning have really started to take off, but for most people, the whole idea of what is a computer seeing when it's looking at an image is relatively obscure."</h2>
+            <h3 style="margin:0px">Mike Krieger</h3>
+        </div>
+    </div>
+    <div class="info">
+        <h1 class="article-title">Color Quantization using K-Means</h1>
+        <div class="isitab">
+            <h5>This article is part 1 of 2 episodes in Computer Vision: Object Detection with Color Quantization and Semantic Clustering.</h5>
+
+            <h4>In this 2-part series, we'll learn how a computer can percept its surrounding environment from a camera sensor, detect an particular object, and manipulate its environment. This method is mainly used in robotics to create a functional objective for the robot, i.e. to set a waypoint and detect a predefined object based on its color and morphology.</h4>
+
+            <h3>What is Color Quantization?</h3>
+            <p>In computer graphics, color quantization or color image quantization is a process that reduces the number of distinct colors used in an image, usually with the intention that the new image should be as visually similar as possible to the original image. Computer algorithms to perform color quantization on bitmaps have been studied since the 1970s. Color quantization is critical for displaying images with many colors on devices that can only display a limited number of colors, usually due to memory limitations, and enables efficient compression of certain types of images.</p>
+
+            <p>There are many methods or algorithms for color quantization. The most popular algorithm by far, invented by Paul Heckbert in 1979, is the median cut algorithm. Many variations on this scheme are in use. Before this time, most color quantization was done using the population algorithm or population method, which essentially constructs a histogram of equal-sized ranges and assigns colors to the ranges containing the most points. A more modern popular method is clustering using octrees, first conceived by Gervautz and Purgathofer and improved by Xerox PARC researcher Dan Bloomberg. In this article, we'll learn a relatively new widely-used method not only in computer vision, but also in statistics and machine learning, <i>K-Means Clustering.</i></p>
+
+            <h3>K-Means Clustering</h3>
+            <p>Basically k-means is a clustering algorithm used in Machine Learning where a set of data points are to be categorized to ‘k’ groups.</p>
+            <h4>How does it work?</h4>
+            <p>K-Means works on simply by calculating the scalar distance between a point to a precalculated "center" of the clusters.</p>
+            <ol>
+                <li>Randomly choose 'k' points from dataset.</li>
+                <li>Now for every data point calculate distance from each of the ‘k’ clusters and assign it to nearest cluster.</li>
+                <li>After every assignment recalculate the cluster "center" by averaging the distances of all the associated points.</li>
+            </ol>
+
+            <h3>K-Means Clustering on Digital Images</h3>
+            <p>A digital image is composed of a matrix of pixels with particular values. Each pixel is usually comprised of a number of channels. A well-known example of color channel is RGB (red-green-blue) channel which has 3 channels. Another example of 3-channel colorspaces are HSV, HLS, YUV, YCbCr, Lab, and Luv. There are also 1-channel colorspaces such as grayscale.</p>
+            
+            <p>For this example, we'll take an image with RGB channel. Since the image has 3 channels (red, green, and blue), we can think of each pixel as a point in 3-space. Therefore, applying K-Means on the image is possible.</p>
+            
+            <p>After processing each pixel, the cluster centroids (the first 'k' points chosen from the dataset) will be called the dominant colors of the image.</p>
+
+            <h3>Algorithm and Result</h3>
+            <p>As this article is not intended to be a tutorial, I will not show you the source code. Rather, I'll briefly talk about each step in the algorithm without the implementation. All that I can tell you is that I write this program in C++ with the help of OpenCV library. This is also due to that the purpose of this program and source code is for an undisclosed project and not for public (If you've known me for quite a while or you've asked me, you'll see why).</p>
+            
+            <p>This is the original image that we'll be using:</p>
+            <img src="img/flower-field-original.jpg" width="480">
+            <figcaption>Original image: a flower field.</figcaption>
+
+            <p>The image size is 920x720 pixels. First, we'll configure how many clusters there will be in our result image. The number of clusters determines the number of colors in the result image. As the image above has 4 seemingly "dominant" colors, we'll try the algorithm with 4 clusters. We'll also try the algorithm with 2, 8, and 16 clusters to see the difference.</p>
+            
+            <p>Then, we'll use <code>cv::kmeans</code> to generate a matrix which will label clusters in the image.</p>
+            
+            <p>Finally, generate a new <code>cv::Mat</code> matrix for the result image, and fill each pixel with its cluster's centroid color. Here is the result with 2, 4, 8, and 16 clusters.</p>
+
+            <img src="img/flower-field-2-clusters.jpg" width="320">
+            <figcaption>Result for 2 image clusters.</figcaption>
+
+            <img src="img/flower-field-4-clusters.jpg" width="320">
+            <figcaption>Result for 4 image clusters.</figcaption>
+        </div>
+    </div>
+    <div class="footer">
+        <p>
+            <a href="https://www.instagram.com/dionesiusap/" class="sb min instagram">Instagram</a>
+            <a href="https://www.facebook.com/dionesius.agung.ap/" class="sb min facebook">Facebook</a>
+            <a href="https://twitter.com/dionn_didi1311" class="sb min twitter">Twitter</a>
+            <a href="https://github.com/dionesiusap" class="sb min github">GitHub</a>
+            <a href="mailto:dionesiusap@gmail.com?Subject=Hello%20Dionesius" class="sb min email">Email</a>
+        </p>
+        <p style="font-size:.75em">&copy; 2017 by Dionesius Agung Andika Perkasa</p>
+    </div>
+</body>
+
+<script type="text/javascript" src="../main.js"></script>
+<script type="text/javascript" src="../topnav.js"></script>
+
+</html>
